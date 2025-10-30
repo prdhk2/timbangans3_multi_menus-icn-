@@ -1,13 +1,13 @@
 #include "config.h"
 
-const char* apiSWD1 = "http://103.82.241.190/api/save-plastic"; // API untuk plastik
-const char* apiSWD2 = "http://103.82.241.190/api/save-botol-plastik"; // API untuk botol plastik
-const char* apiSWD3 = "http://103.82.241.190/api/save-kertas"; // API untuk kertas
-const char* apiSWD4 = "http://103.82.241.190/api/save-gabruk"; // API untuk gabruk
-const char* apiSWD5 = "http://103.82.241.190/api/save-kardus"; // API untuk kardus
-const char* apiSWD6 = "http://103.82.241.190/api/save-botol-kaca"; // API untuk botol kaca
-const char* apiSWD7 = "http://103.82.241.190/api/save-aqua-gelas"; // API untuk aqua gelas
-const char* apiSWD8 = "http://103.82.241.190/api/save-incenerator"; // API untuk Berat Incenerator  
+const char* apiSWD1 = "#"; // API untuk plastik
+const char* apiSWD2 = "#"; // API untuk botol plastik
+const char* apiSWD3 = "#"; // API untuk kertas
+const char* apiSWD4 = "#"; // API untuk gabruk
+const char* apiSWD5 = "#"; // API untuk kardus
+const char* apiSWD6 = "#"; // API untuk botol kaca
+const char* apiSWD7 = "#"; // API untuk aqua gelas
+const char* apiSWD8 = "#"; // API untuk Berat Incenerator  
 
 int sendData(String menu, float weight) {
     if (WiFi.status() != WL_CONNECTED) {
