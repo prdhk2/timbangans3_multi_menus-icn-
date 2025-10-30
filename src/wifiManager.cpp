@@ -1,7 +1,7 @@
 #include "config.h"
 
-const char *ssid = "Biodigester2025";
-const char *password = "z3r0w4sTe###";
+const char *ssid = "#";
+const char *password = "#";
 
 unsigned long wifiCheckMillis = 0;
 bool wifiConnected = false;
