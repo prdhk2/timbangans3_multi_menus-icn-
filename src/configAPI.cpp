@@ -1,6 +1,6 @@
 #include "config.h"
 
-const char* apiSWD1 = "http://103.82.241.190/api/pirolisis"; // API untuk plastik
+const char* apiSWD1 = "http://103.82.241.190/api/save-pirolisis"; // API untuk plastik
 const char* apiSWD2 = "http://103.82.241.190/api/sampah_hari_ini"; // API untuk botol plastik
 const char* apiSWD3 = "http://103.82.241.190/api/incinerator"; // API untuk kertas
 // const char* apiSWD4 = "http://103.82.241.190/api/gabruk"; // API untuk gabruk
