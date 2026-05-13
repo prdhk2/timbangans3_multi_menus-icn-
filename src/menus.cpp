@@ -140,12 +140,7 @@ void resetChooseMenuState() {
 
 void loadMenuList() {
     menuList.clear();
-    menuList.push_back({1, "Plastik"});
-    menuList.push_back({2, "Botol Plastik"});
-    menuList.push_back({3, "Kertas"});
-    menuList.push_back({4, "Gabruk"});
-    menuList.push_back({5, "Kardus"});
-    menuList.push_back({6, "Botol Kaca"});
-    menuList.push_back({7, "Aqua Gelas"});
-    menuList.push_back({8, "Incenerator"});
+    menuList.push_back({1, "Pirolisis"});
+    menuList.push_back({2, "Data Sampah Hari ini"});
+    menuList.push_back({3, "Incenerator"});
 }
