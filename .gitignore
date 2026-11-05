@@ -3,3 +3,6 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# Build secrets (API key, MQTT login) - see secrets.ini.example
+secrets.ini
