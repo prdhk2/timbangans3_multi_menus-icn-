@@ -54,12 +54,14 @@ constexpr uint32_t CHOOSE_MENU_TIMEOUT_MS = 30000;  // no key: back to main menu
 constexpr uint32_t SEND_RESULT_SCREEN_MS = 3000;
 
 // ------------------------------------------------------------ Waste types
-// Menu order, labels and upload endpoints (relative to API_BASE_URL). The
-// labels are the original firmware's; each points at the route on the new
-// server that writes the same column the old one did:
-//   old /api/save-pirolisis   -> scavengers/save-pirolisis   (pirolisis)
-//   old /api/sampah_hari_ini  -> scavengers/save-icn-today   (siap_bakar)
-//   old /api/incinerator      -> scavengers/save-incenerator (incenerator)
+// Menu order, labels and upload endpoints (relative to API_BASE_URL), as
+// documented by the backend (app/Config/api/depok.php, config/waste.php):
+//   Bahan Incinerator -> save-incenerator  (incenerator, "bahan insinerator 1";
+//                        counted as Bahan Insinerator in the MLO formula)
+//   Incinerator       -> save-icn-today    (siap_bakar, "siap bakar")
+//   Bahan Pirolisis   -> save-bahan-prl    (bahan_pirolisis)
+//   Pirolisis         -> save-pirolisis    (pirolisis)
+//   Residu            -> save-residu       (residu)
 struct WasteType {
   uint8_t id;
   const char *label;
@@ -67,9 +69,11 @@ struct WasteType {
 };
 
 constexpr WasteType WASTE_TYPES[] = {
-    {1, "Pirolisis", "/scavengers/save-pirolisis"},
-    {2, "Data Sampah Hari ini", "/scavengers/save-icn-today"},
-    {3, "Incenerator", "/scavengers/save-incenerator"},
+    {1, "Bahan Incinerator", "/scavengers/save-incenerator"},
+    {2, "Incinerator", "/scavengers/save-icn-today"},
+    {3, "Bahan Pirolisis", "/scavengers/save-bahan-prl"},
+    {4, "Pirolisis", "/scavengers/save-pirolisis"},
+    {5, "Residu", "/scavengers/save-residu"},
 };
 constexpr size_t WASTE_TYPE_COUNT = sizeof(WASTE_TYPES) / sizeof(WASTE_TYPES[0]);
 
@@ -125,7 +129,7 @@ constexpr char DEVICE_ID[] = "depok-icn-scale-01";
 // any other site is refused. Must match config/fleet.php on the server.
 constexpr char SITE[] = "depok_icn_scale";
 
-constexpr char FIRMWARE_VERSION[] = "3.0.0";
+constexpr char FIRMWARE_VERSION[] = "3.1.0";
 
 constexpr char NTP_SERVER_1[] = "pool.ntp.org";
 constexpr char NTP_SERVER_2[] = "time.google.com";

@@ -1,7 +1,7 @@
 # Timbangan ICN Depok, multi menu (ESP32-S3)
 
-Timbangan untuk area ICN: operator memilih menu (Pirolisis / Data Sampah
-Hari ini / Incenerator), menimbang, lalu menekan **KIRIM**. Data tersimpan di
+Timbangan untuk area ICN: operator memilih menu (Bahan Incinerator /
+Incinerator / Bahan Pirolisis / Pirolisis / Residu), menimbang, lalu menekan **KIRIM**. Data tersimpan di
 `monitoring.xampah.com`. Status timbangan, live log, dan update firmware OTA
 bisa dipantau dari dashboard **Depok → Fleet (OTA) → Timbangan ICN**.
 
@@ -23,11 +23,13 @@ Semua pin **sama persis** dengan firmware sebelumnya.
    menu utama (otomatis setelah 30 detik tanpa tombol).
 3. Timbang, lalu **KIRIM**. **BACK** kembali ke daftar menu.
 
-| Menu | Endpoint baru | Endpoint lama |
+| Menu | Endpoint | Kolom `scavengers_weight_data` |
 |---|---|---|
-| 1. Pirolisis | `POST /api/scavengers/save-pirolisis` | `/api/save-pirolisis` |
-| 2. Data Sampah Hari ini | `POST /api/scavengers/save-icn-today` | `/api/sampah_hari_ini` |
-| 3. Incenerator | `POST /api/scavengers/save-incenerator` | `/api/incinerator` |
+| 1. Bahan Incinerator | `POST /api/scavengers/save-incenerator` | `incenerator` |
+| 2. Incinerator | `POST /api/scavengers/save-icn-today` | `siap_bakar` |
+| 3. Bahan Pirolisis | `POST /api/scavengers/save-bahan-prl` | `bahan_pirolisis` |
+| 4. Pirolisis | `POST /api/scavengers/save-pirolisis` | `pirolisis` |
+| 5. Residu | `POST /api/scavengers/save-residu` | `residu` |
 
 Body `{"user_id":3,"weight":12.34}` + header `X-API-KEY`. `user_id` default 3
 ("admin", seperti firmware lama), bisa diganti lewat `DP_USER_ID` di

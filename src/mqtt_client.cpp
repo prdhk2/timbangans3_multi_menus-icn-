@@ -71,7 +71,7 @@ bool append(size_t &used, const char *format, ...) {
 //   {"online":true,"uptime_s":..,"fw":"3.0.0","site":"depok_icn_scale","heap":..,
 //    "minheap":..,"rssi":..,"ts":..,"reset":"POWERON",
 //    "diag":{"kind":"depok_icn_scale","ota_trial":false,
-//      "state":"WEIGHING","waste":"Pirolisis","user_id":3,
+//      "state":"WEIGHING","waste":"Bahan Pirolisis","user_id":3,
 //      "scale":{"state":"LIVE","age_s":0,"frames":812,"rejected":0,"weight":12.34},
 //      "api":{"sends_ok":9,"sends_failed":1,"last_http":200,"last_send_ok_ts":..,"busy":false},
 //      "wifi_reconnects":0,"mqtt_reconnects":1,"log_dropped":0}}
